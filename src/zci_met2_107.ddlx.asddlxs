@@ -1,0 +1,82 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Quiz Question',
+    typeNamePlural: 'Quiz Questions',
+    title: { type: #STANDARD, label: 'Question Number', value: 'QuestionId' }
+  }
+}
+
+annotate entity ZCI_SHE1_107 with
+{
+  /* UI Facets - Layout for the Question Object Page */
+  @UI.facet: [
+    {
+      id: 'QuestionDetails',
+      purpose: #STANDARD,
+      type: #IDENTIFICATION_REFERENCE,
+      label: 'Question Details',
+      position: 10
+    }
+  ]
+
+  /* Field Styling */
+  @UI: { lineItem:       [{ position: 10, label: 'Quiz ID' }],
+         identification: [{ position: 10, label: 'Quiz ID' }] }
+  QuizId;
+
+  @UI: { lineItem:       [{ position: 20, label: 'Question No.' }],
+         identification: [{ position: 20, label: 'Question No.' }] }
+  QuestionId;
+
+  @UI: { lineItem:       [{ position: 30, label: 'Question Text' }],
+         identification: [{ position: 30, label: 'Question Text' }] }
+  QuestionText;
+
+  @UI: { lineItem:       [{ position: 40, label: 'Option A' }],
+         identification: [{ position: 40, label: 'Option A' }] }
+  OptionA;
+
+  @UI: { lineItem:       [{ position: 50, label: 'Option B' }],
+         identification: [{ position: 50, label: 'Option B' }] }
+  OptionB;
+
+  @UI: { lineItem:       [{ position: 60, label: 'Option C' }],
+         identification: [{ position: 60, label: 'Option C' }] }
+  OptionC;
+
+  @UI: { lineItem:       [{ position: 70, label: 'Option D' }],
+         identification: [{ position: 70, label: 'Option D' }] }
+  OptionD;
+
+  @UI: { lineItem:       [{ position: 80, label: 'Correct Answer' }],
+         identification: [{ position: 80, label: 'Correct Answer' }] }
+  CorrectAnswer;
+
+  @UI: { identification: [{ position: 90, label: 'Difficulty' }] }
+  DifficultyLevel;
+
+  @UI: { identification: [{ position: 100, label: 'Explanation' }] }
+  Explanation;
+
+  @UI: { lineItem:       [{ position: 110, label: 'Marks' }],
+         identification: [{ position: 110, label: 'Marks' }] }
+  Marks;
+
+  /* --- Administrative Fields (Hidden in Line Item as per Step 8) --- */
+
+  @UI.hidden: true
+  LocalCreatedBy; 
+
+  @UI.hidden: true
+  LocalCreatedAt; 
+
+  @UI.hidden: true
+  LocalLastChangedBy;
+
+  @UI.hidden: true
+  LocalLastChangedAt; 
+
+  @UI.hidden: true
+  LastChangedAt;
+}

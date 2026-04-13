@@ -1,0 +1,26 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZCI_HE1_107 alias QuizHeader
+{
+  use create;
+  use update;
+  use delete;
+
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Resume;
+  use action Prepare;
+
+  use association _Questions { create; with draft; }
+}
+
+define behavior for ZCI_SHE1_107 alias QuizQuestion
+{
+  use update;
+  use delete;
+
+  use association _QuizHeader { with draft; }
+}
